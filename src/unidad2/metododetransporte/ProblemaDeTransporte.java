@@ -5,18 +5,29 @@ package unidad2.metododetransporte;
  */
 public class ProblemaDeTransporte {
 
-    private int m; //Cantidad de demandas
-    private int n;  //cantidad de ofertas
-    private double O[] = {60, 50, 40}; //valores de cada oferta
-    private double D[] = {40, 70, 10, 30}; //valores de cada demanda
+    private int n; //Cantidad de demandas
+    private int m;  //cantidad de ofertas
+    private double O[]; //= {60, 50, 40}; //valores de cada oferta
+    private double D[]; //= {40, 70, 10, 30}; //valores de cada demanda
     private double MatrizCostos[][]; // matriz de cada costo que hay (Aun no se ocupa)
     private double stage[][];
 
-    public ProblemaDeTransporte(int n, int m) {
-        this.m = m;
+    public ProblemaDeTransporte(int n, int m, double[] O, double[] D, double[][] MatrizCostos) {
         this.n = n;
+        this.m = m;
+        this.O = O;
+        this.D = D;
+        this.MatrizCostos = MatrizCostos;
         stage = new double [n][m];
     }
+    
+    
+
+//    public ProblemaDeTransporte(int n, int m) {
+//        this.m = m;
+//        this.n = n;
+//        stage = new double [n][m];
+//    }
 
     public void setO(double[] O) {
         this.O = O;
